@@ -1,0 +1,48 @@
+@startuml usecases
+left to right direction
+
+:Boby: as B
+
+rectangle Account as Acc {
+  (Signin)
+  (Signup)
+  (Reset password)
+  (Signout)
+  (Upload identity documents)
+}
+
+rectangle Payement {
+  (Register credit card)
+  (Regsiter bank account)
+}
+
+rectangle Market as M {
+  (Buy cryptos)
+  (Sell cryptos)
+  (Transfer cryptos)
+  (View trends)
+}
+
+rectangle Wallet as W {
+  (Manage wallet)
+  (Add/Remove crypto\nto/from wallet)
+  (Transfer crypto\nfrom wallet)
+  (View wallet\ntotal amount)
+  (View wallet\ncontent)
+}
+
+:Admin: as Admn
+
+rectangle Admin {
+  (Manage users)
+  (Manage cryptos)
+}
+
+B -u-> Acc
+B -d-> Payement
+B -d-> M
+B -d-> W
+Admn --|> B
+Admn --> Admin
+
+@enduml
